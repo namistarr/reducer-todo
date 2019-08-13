@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <TodoForm dispatch={dispatch} />
-      <TodoItem state={state} />
+      <TodoItem state={state} dispatch={dispatch} />
     </div>
   );
 }

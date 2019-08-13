@@ -37,7 +37,27 @@ const todoReducer = (state, action) => {
                     task: action.payload,
                     completed: false
                 }
-            ];            
+            ];  
+            
+        case 'TOGGLE_TODO':
+            return [
+                ...state.map(task => {
+                    if (task.id === action.payload) {
+                        task.completed = !task.completed;
+                        return task;
+                    }
+                    else {
+                        return task;
+                    }
+                })
+            ]
+
+        case 'CLEAR_TODO':
+            return [
+                ...state.filter(task => !task.completed
+                )
+            ]
+
         default: 
             return state;
     }
