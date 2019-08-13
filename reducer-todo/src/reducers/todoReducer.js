@@ -1,4 +1,4 @@
-export const todoData = [
+export const initialState = [
     {
         task: 'Go over TK before lecture',
         id: 1,
@@ -28,7 +28,7 @@ export const todoData = [
 
 
 
-export const todoReducer = (state, action) => {
+const todoReducer = (state, action) => {
     switch(action.type) {
         case 'ADD_TODO':
             return [
@@ -42,3 +42,5 @@ export const todoReducer = (state, action) => {
             return state;
     }
 }
+
+export default todoReducer;
